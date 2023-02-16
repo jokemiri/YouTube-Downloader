@@ -4,16 +4,22 @@ from pytube import YouTube
 from tkinter import messagebox, filedialog
 
 root = tk.Tk()
-root.geometry("600x250")
+root.geometry("600x250+400+30")
 root.resizable(False,False)
-root.title("YouTube Video Downloader")
+root.title("YouTube Video Downloader -by Josh")
 root.config(background="#154c79")
 
 video_link = StringVar()
 download_path = StringVar()
 
-image_icon=PhotoImage(file="record_red.png")
+image_icon=PhotoImage(file="icon.png")
 root.iconphoto(False,image_icon)
+
+photo=PhotoImage(file="logo.png")
+myimage=Label(image=photo,background='#154c79')
+myimage.place(x=5, y=5)
+
+# body_label = Label(root, text="by Josh", font="Candara 11", background="#154c79", foreground="white").place(x=350, y=50)
 
 def widgets():
     head_label = Label(root, text="YouTube Downloader", font="Candara 16", background="#154c79", foreground="white",
@@ -29,7 +35,7 @@ def widgets():
 
     root.linkText.grid(row=2, column=1, pady=5, padx=5, columnspan=2)
 
-    destination_label = Label(root, text="Saved At", bg="#154c79", fg="white", padx=9, pady=5)
+    destination_label = Label(root, text="Save At", bg="#154c79", fg="white", padx=9, pady=5)
 
     destination_label.place(x=3, y=125)
 
